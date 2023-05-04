@@ -1,3 +1,7 @@
+use mimalloc::MiMalloc;
+#[global_allocator]
+static GLOBAL: MiMalloc = MiMalloc;
+
 use anyhow::Error;
 use clap::{crate_version, load_yaml, App, AppSettings};
 use jtd_infer::{HintSet, Hints, Inferrer, NumType};
